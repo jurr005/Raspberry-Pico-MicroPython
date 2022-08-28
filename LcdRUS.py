@@ -27,7 +27,6 @@ class FontText:
         dc = Pin(4)
         rst=Pin(2)
         self.bl = Pin(3, Pin.OUT, value=1)
-        #initialize lcd
         self.lcd = pcd8544_fb.PCD8544_FB(self.spi, cs, dc, rst)
         self.buffer = bytearray((pcd8544_fb.HEIGHT // 8) * pcd8544_fb.WIDTH) # Битовый массив
         self.fbuf=framebuf.FrameBuffer(self.buffer, pcd8544_fb.WIDTH, pcd8544_fb.HEIGHT, framebuf.MONO_VLSB)
